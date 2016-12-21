@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BADFAA021E09900C000B35C9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BADFAA011E09900C000B35C9 /* main.c */; };
+		BADFAA021E09900C000B35C9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BADFAA011E09900C000B35C9 /* main.c */; settings = {COMPILER_FLAGS = "-Wall"; }; };
+		BADFAA0C1E0B3315000B35C9 /* libmodbus.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BADFAA091E0B3315000B35C9 /* libmodbus.5.dylib */; };
+		BADFAA0D1E0B3315000B35C9 /* libmodbus.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BADFAA0A1E0B3315000B35C9 /* libmodbus.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		BADFA9FE1E09900C000B35C9 /* modbus_post */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_post; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADFAA011E09900C000B35C9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BADFAA091E0B3315000B35C9 /* libmodbus.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmodbus.5.dylib; path = ../../../../../usr/local/lib/libmodbus.5.dylib; sourceTree = "<group>"; };
+		BADFAA0A1E0B3315000B35C9 /* libmodbus.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmodbus.5.dylib; path = ../../../../../usr/local/lib/libmodbus.5.dylib; sourceTree = "<group>"; };
+		BADFAA0B1E0B3315000B35C9 /* libmodbus.la */ = {isa = PBXFileReference; lastKnownFileType = text; name = libmodbus.la; path = ../../../../../usr/local/lib/libmodbus.la; sourceTree = "<group>"; };
+		BADFAA101E0B34EA000B35C9 /* modbus_post.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = modbus_post.profdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADFAA0C1E0B3315000B35C9 /* libmodbus.5.dylib in Frameworks */,
+				BADFAA0D1E0B3315000B35C9 /* libmodbus.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,8 @@
 			children = (
 				BADFAA001E09900C000B35C9 /* modbus_post */,
 				BADFA9FF1E09900C000B35C9 /* Products */,
+				BADFAA081E0B3314000B35C9 /* Frameworks */,
+				BADFAA0F1E0B34EA000B35C9 /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +70,24 @@
 				BADFAA011E09900C000B35C9 /* main.c */,
 			);
 			path = modbus_post;
+			sourceTree = "<group>";
+		};
+		BADFAA081E0B3314000B35C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BADFAA091E0B3315000B35C9 /* libmodbus.5.dylib */,
+				BADFAA0A1E0B3315000B35C9 /* libmodbus.5.dylib */,
+				BADFAA0B1E0B3315000B35C9 /* libmodbus.la */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BADFAA0F1E0B34EA000B35C9 /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				BADFAA101E0B34EA000B35C9 /* modbus_post.profdata */,
+			);
+			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,16 +245,28 @@
 		BADFAA061E09900C000B35C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = HL245Q5JK4;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				OTHER_LIBTOOLFLAGS = "-L/usr/local/lib -I/usr/local/include -lmodbus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 			};
 			name = Debug;
 		};
 		BADFAA071E09900C000B35C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = HL245Q5JK4;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				OTHER_LIBTOOLFLAGS = "-L/usr/local/lib -I/usr/local/include -lmodbus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 			};
 			name = Release;
 		};
