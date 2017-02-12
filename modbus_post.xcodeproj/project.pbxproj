@@ -8,10 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		BA0CA7DF1E2B083A00170BCA /* libmodbus.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0CA7DE1E2B083A00170BCA /* libmodbus.5.dylib */; };
+		BA740BA31E504B1C008549C2 /* mreadfile.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BA21E504B1C008549C2 /* mreadfile.c */; };
+		BA740BAD1E505C0D008549C2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BAC1E505C0D008549C2 /* main.c */; };
+		BA740BB31E505C7B008549C2 /* sql.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BB11E505C7B008549C2 /* sql.c */; };
+		BA740BB41E505C7B008549C2 /* sql.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BB11E505C7B008549C2 /* sql.c */; };
+		BAD171F51E3D1939008A7CBE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD171F31E3D1939008A7CBE /* libsqlite3.0.tbd */; };
+		BAD171F61E3D1939008A7CBE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD171F41E3D1939008A7CBE /* libsqlite3.tbd */; };
 		BADFAA021E09900C000B35C9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BADFAA011E09900C000B35C9 /* main.c */; settings = {COMPILER_FLAGS = "-Wall"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BA740BA81E505C0D008549C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		BADFA9FC1E09900B000B35C9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -25,16 +40,34 @@
 
 /* Begin PBXFileReference section */
 		BA0CA7DE1E2B083A00170BCA /* libmodbus.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmodbus.5.dylib; path = ../../../../../../../../usr/local/lib/libmodbus.5.dylib; sourceTree = "<group>"; };
+		BA740BA21E504B1C008549C2 /* mreadfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mreadfile.c; path = ../../../../../../src/compp/libmmath/trunk/src/mreadfile.c; sourceTree = "<group>"; };
+		BA740BA41E504C14008549C2 /* mreadfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mreadfile.h; sourceTree = "<group>"; };
+		BA740BA51E505488008549C2 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		BA740BAA1E505C0D008549C2 /* modbus_dump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_dump; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA740BAC1E505C0D008549C2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BA740BB11E505C7B008549C2 /* sql.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sql.c; sourceTree = SOURCE_ROOT; };
+		BA740BB21E505C7B008549C2 /* sql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sql.h; sourceTree = SOURCE_ROOT; };
+		BAD171F31E3D1939008A7CBE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BAD171F41E3D1939008A7CBE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BADFA9FE1E09900C000B35C9 /* modbus_post */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_post; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADFAA011E09900C000B35C9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BADFAA101E0B34EA000B35C9 /* modbus_post.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = modbus_post.profdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA740BA71E505C0D008549C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BADFA9FB1E09900B000B35C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD171F51E3D1939008A7CBE /* libsqlite3.0.tbd in Frameworks */,
+				BAD171F61E3D1939008A7CBE /* libsqlite3.tbd in Frameworks */,
 				BA0CA7DF1E2B083A00170BCA /* libmodbus.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,10 +75,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA740BAB1E505C0D008549C2 /* modbus_dump */ = {
+			isa = PBXGroup;
+			children = (
+				BA740BAC1E505C0D008549C2 /* main.c */,
+			);
+			path = modbus_dump;
+			sourceTree = "<group>";
+		};
+		BA740BB51E505C82008549C2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BA740BA21E504B1C008549C2 /* mreadfile.c */,
+				BA740BA41E504C14008549C2 /* mreadfile.h */,
+				BA740BB11E505C7B008549C2 /* sql.c */,
+				BA740BB21E505C7B008549C2 /* sql.h */,
+			);
+			name = Shared;
+			path = modbus_post;
+			sourceTree = "<group>";
+		};
 		BADFA9F51E09900B000B35C9 = {
 			isa = PBXGroup;
 			children = (
+				BA740BB51E505C82008549C2 /* Shared */,
 				BADFAA001E09900C000B35C9 /* modbus_post */,
+				BA740BAB1E505C0D008549C2 /* modbus_dump */,
 				BADFA9FF1E09900C000B35C9 /* Products */,
 				BADFAA081E0B3314000B35C9 /* Frameworks */,
 				BADFAA0F1E0B34EA000B35C9 /* OptimizationProfiles */,
@@ -56,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BADFA9FE1E09900C000B35C9 /* modbus_post */,
+				BA740BAA1E505C0D008549C2 /* modbus_dump */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				BADFAA011E09900C000B35C9 /* main.c */,
+				BA740BA51E505488008549C2 /* main.h */,
 			);
 			path = modbus_post;
 			sourceTree = "<group>";
@@ -71,6 +128,8 @@
 		BADFAA081E0B3314000B35C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAD171F31E3D1939008A7CBE /* libsqlite3.0.tbd */,
+				BAD171F41E3D1939008A7CBE /* libsqlite3.tbd */,
 				BA0CA7DE1E2B083A00170BCA /* libmodbus.5.dylib */,
 			);
 			name = Frameworks;
@@ -87,6 +146,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BA740BA91E505C0D008549C2 /* modbus_dump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA740BAE1E505C0D008549C2 /* Build configuration list for PBXNativeTarget "modbus_dump" */;
+			buildPhases = (
+				BA740BA61E505C0D008549C2 /* Sources */,
+				BA740BA71E505C0D008549C2 /* Frameworks */,
+				BA740BA81E505C0D008549C2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = modbus_dump;
+			productName = modbus_dump;
+			productReference = BA740BAA1E505C0D008549C2 /* modbus_dump */;
+			productType = "com.apple.product-type.tool";
+		};
 		BADFA9FD1E09900B000B35C9 /* modbus_post */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BADFAA051E09900C000B35C9 /* Build configuration list for PBXNativeTarget "modbus_post" */;
@@ -113,6 +189,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Badger Hill Brewing";
 				TargetAttributes = {
+					BA740BA91E505C0D008549C2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HL245Q5JK4;
+						ProvisioningStyle = Automatic;
+					};
 					BADFA9FD1E09900B000B35C9 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = HL245Q5JK4;
@@ -133,22 +214,50 @@
 			projectRoot = "";
 			targets = (
 				BADFA9FD1E09900B000B35C9 /* modbus_post */,
+				BA740BA91E505C0D008549C2 /* modbus_dump */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BA740BA61E505C0D008549C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA740BB41E505C7B008549C2 /* sql.c in Sources */,
+				BA740BAD1E505C0D008549C2 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BADFA9FA1E09900B000B35C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA740BB31E505C7B008549C2 /* sql.c in Sources */,
 				BADFAA021E09900C000B35C9 /* main.c in Sources */,
+				BA740BA31E504B1C008549C2 /* mreadfile.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BA740BAF1E505C0D008549C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HL245Q5JK4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BA740BB01E505C0D008549C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HL245Q5JK4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		BADFAA031E09900C000B35C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -240,11 +349,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = HL245Q5JK4;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LIBTOOLFLAGS = "-L/usr/local/lib -I/usr/local/include -lmodbus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -257,11 +367,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = HL245Q5JK4;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LIBTOOLFLAGS = "-L/usr/local/lib -I/usr/local/include -lmodbus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +384,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA740BAE1E505C0D008549C2 /* Build configuration list for PBXNativeTarget "modbus_dump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA740BAF1E505C0D008549C2 /* Debug */,
+				BA740BB01E505C0D008549C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BADFA9F91E09900B000B35C9 /* Build configuration list for PBXProject "modbus_post" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
