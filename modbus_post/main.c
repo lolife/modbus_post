@@ -8,7 +8,7 @@
 
 #include "main.h"
 #define READFILE 0
-#define SELECT 1
+#define SELECT 0
 
 
 // Main db connection

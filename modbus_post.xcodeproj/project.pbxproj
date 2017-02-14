@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA0CA7DF1E2B083A00170BCA /* libmodbus.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0CA7DE1E2B083A00170BCA /* libmodbus.5.dylib */; };
-		BA740BA31E504B1C008549C2 /* mreadfile.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BA21E504B1C008549C2 /* mreadfile.c */; };
+		BA278DD41E533B1200C23187 /* mreadfile.c in Sources */ = {isa = PBXBuildFile; fileRef = BA278DD31E533B1200C23187 /* mreadfile.c */; };
 		BA740BAD1E505C0D008549C2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BAC1E505C0D008549C2 /* main.c */; };
 		BA740BB31E505C7B008549C2 /* sql.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BB11E505C7B008549C2 /* sql.c */; };
 		BA740BB41E505C7B008549C2 /* sql.c in Sources */ = {isa = PBXBuildFile; fileRef = BA740BB11E505C7B008549C2 /* sql.c */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		BA0CA7DE1E2B083A00170BCA /* libmodbus.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmodbus.5.dylib; path = ../../../../../../../../usr/local/lib/libmodbus.5.dylib; sourceTree = "<group>"; };
-		BA740BA21E504B1C008549C2 /* mreadfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mreadfile.c; path = ../../../../../../src/compp/libmmath/trunk/src/mreadfile.c; sourceTree = "<group>"; };
+		BA278DD31E533B1200C23187 /* mreadfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mreadfile.c; sourceTree = "<group>"; };
 		BA740BA41E504C14008549C2 /* mreadfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mreadfile.h; sourceTree = "<group>"; };
 		BA740BA51E505488008549C2 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		BA740BAA1E505C0D008549C2 /* modbus_dump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_dump; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 		BA740BB51E505C82008549C2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BA740BA21E504B1C008549C2 /* mreadfile.c */,
+				BA278DD31E533B1200C23187 /* mreadfile.c */,
 				BA740BA41E504C14008549C2 /* mreadfile.h */,
 				BA740BB11E505C7B008549C2 /* sql.c */,
 				BA740BB21E505C7B008549C2 /* sql.h */,
@@ -234,8 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA740BB31E505C7B008549C2 /* sql.c in Sources */,
+				BA278DD41E533B1200C23187 /* mreadfile.c in Sources */,
 				BADFAA021E09900C000B35C9 /* main.c in Sources */,
-				BA740BA31E504B1C008549C2 /* mreadfile.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +391,7 @@
 				BA740BB01E505C0D008549C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BADFA9F91E09900B000B35C9 /* Build configuration list for PBXProject "modbus_post" */ = {
 			isa = XCConfigurationList;
