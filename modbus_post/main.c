@@ -105,18 +105,20 @@ int get_emerson_data( emerson_data *edata ) {
     uint16_t        tab_reg[32];
     modbus_t        *mb = modbus_new_tcp( "10.0.1.128", 502 );
     
-    //    modbus_set_debug( mb, TRUE );
+//  fprintf( stderr, "modbus_post starting...\n");
     modbus_connect( mb );
+//  modbus_set_debug( mb, TRUE );
     int rc = modbus_read_input_registers( mb, 0, 12, tab_reg );
     if ( rc == -1 ) {
         fprintf( stderr, "Error in get_emerson_data(): %i, %s\n", errno, modbus_strerror(errno) );
-        return(-1);
+//        return(-1);
     }
     else
 		parse_emerson_data( tab_reg, edata );
 
     modbus_close( mb );
     modbus_free( mb );
+//  fprintf( stderr, "modbus_post ended.\n");
     return(0);
 }
 

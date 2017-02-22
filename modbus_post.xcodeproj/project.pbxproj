@@ -49,6 +49,8 @@
 		BA740BB21E505C7B008549C2 /* sql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sql.h; sourceTree = SOURCE_ROOT; };
 		BAD171F31E3D1939008A7CBE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BAD171F41E3D1939008A7CBE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BAD9E2F81E5E414500FF07C7 /* com.badgerhllbrewing.modbus_post.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = com.badgerhllbrewing.modbus_post.plist; sourceTree = "<group>"; };
+		BAD9E2F91E5E414500FF07C7 /* run_modbus.tcsh */ = {isa = PBXFileReference; lastKnownFileType = text.script.csh; path = run_modbus.tcsh; sourceTree = "<group>"; };
 		BADFA9FE1E09900C000B35C9 /* modbus_post */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_post; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADFAA011E09900C000B35C9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BADFAA101E0B34EA000B35C9 /* modbus_post.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = modbus_post.profdata; sourceTree = "<group>"; };
@@ -95,9 +97,19 @@
 			path = modbus_post;
 			sourceTree = "<group>";
 		};
+		BAD9E2F51E5E40F600FF07C7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BAD9E2F81E5E414500FF07C7 /* com.badgerhllbrewing.modbus_post.plist */,
+				BAD9E2F91E5E414500FF07C7 /* run_modbus.tcsh */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		BADFA9F51E09900B000B35C9 = {
 			isa = PBXGroup;
 			children = (
+				BAD9E2F51E5E40F600FF07C7 /* Tools */,
 				BA740BB51E505C82008549C2 /* Shared */,
 				BADFAA001E09900C000B35C9 /* modbus_post */,
 				BA740BAB1E505C0D008549C2 /* modbus_dump */,
