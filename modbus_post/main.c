@@ -11,37 +11,16 @@
 #define SELECT 0
 
 
-// Main db connection
-
 int main( int argc, char** argv ) {
     int             rtn = 0;
     emerson_data    *edata;
-    char            buf[1024];
-    int             n;
-    FILE            *infile;
     
     edata = calloc( 1, sizeof(emerson_data) );
 
     if( READFILE ) {
-        infile = fopen( "modbus_log.txt", "r" );
-        assert( infile != NULL );
-        
-        n=-1;
-        while( !feof( infile) ) {
-            fgets( buf, 1024, infile );
-            /* Comments begin with a '#' */
-            if (buf[0] != '#') {
-                n++;
-                sscanf( buf, "%li, %f, %f, %f, %f, %f, %f\n", &edata->t, &edata->cltp, &edata->cltt, &edata->fvwet, &edata->fvf, &edata->fvt, &edata->bbtp );
-                rtn = insert_emerson_data(edata);
-                if( rtn !=0 ) {
-                    fprintf( stderr, "Error when trying to insert emerson data.\n" );
-                    return(rtn);
-                }
-            }
-        }
-        fclose( infile );
-        printf( "Inserted %i lines from file\n", n );
+        int num_records = read_and_insert_file();
+        printf( "Inserted %i lines from file\n", num_records );
+
     }
     else if (SELECT) {
         char *qry = "SELECT * FROM sensor_reports";
@@ -58,6 +37,7 @@ int main( int argc, char** argv ) {
         }
     }
 
+    free(edata);
     if(db)
        sqlite3_close(db);
     return(0);
@@ -98,6 +78,7 @@ int insert_emerson_data( emerson_data *edata ) {
         if( rtn != 0 )
             return(rtn);
     }
+    free(qry);
     return(0);
 }
 
@@ -105,7 +86,6 @@ int get_emerson_data( emerson_data *edata ) {
     uint16_t        tab_reg[32];
     modbus_t        *mb = modbus_new_tcp( "10.0.1.128", 502 );
     
-//  fprintf( stderr, "modbus_post starting...\n");
     modbus_connect( mb );
 //  modbus_set_debug( mb, TRUE );
     int rc = modbus_read_input_registers( mb, 0, 12, tab_reg );
@@ -118,7 +98,6 @@ int get_emerson_data( emerson_data *edata ) {
 
     modbus_close( mb );
     modbus_free( mb );
-//  fprintf( stderr, "modbus_post ended.\n");
     return(0);
 }
 
@@ -141,25 +120,33 @@ void create_sqlite_table() {
     return;
 }
 
+int read_and_insert_file() {
+    char            buf[1024];
+    int             n;
+    FILE            *infile;
+    int             rtn = 0;
+    emerson_data    *edata;
+    
+    edata = calloc( 1, sizeof(emerson_data) );
 
+    infile = fopen( "modbus_log.txt", "r" );
+    assert( infile != NULL );
 
-void get_brewhouse_data() {
-//    uint16_t	tab_reg[32];
-//    
-//    modbus_t	*mb = modbus_new_tcp( "10.0.1.200", 11110 );
-//    
-//    modbus_set_debug( mb, TRUE );
-//    modbus_connect( mb );
-//    int rc = modbus_read_input_registers( mb, 0, 12, tab_reg );
-//    if ( rc == -1 ) {
-//        fprintf( stderr, "Error in get_brewhouse_data: %i, %s\n", errno, modbus_strerror(errno) );
-//    }
-//    else {
-//        fprintf( stdout, "%li, %0.3f, %0.3f, %0.3f, %0.3f, %0.3f, %0.3f\n",
-//                time(0), modbus_get_float_badc(&tab_reg[0]), modbus_get_float_badc(&tab_reg[2]),
-//                modbus_get_float_badc( &tab_reg[4] ), modbus_get_float_badc( &tab_reg[6] ),
-//                modbus_get_float_badc( &tab_reg[8] ), modbus_get_float_badc( &tab_reg[10] ) );
-//    }
+    n=-1;
+    while( !feof( infile) ) {
+        fgets( buf, 1024, infile );
+        /* Comments begin with a '#' */
+        if (buf[0] != '#') {
+            n++;
+            sscanf( buf, "%li, %f, %f, %f, %f, %f, %f\n", &edata->t, &edata->cltp, &edata->cltt, &edata->fvwet, &edata->fvf, &edata->fvt, &edata->bbtp );
+            rtn = insert_emerson_data(edata);
+            if( rtn !=0 ) {
+                fprintf( stderr, "Error when trying to insert emerson data.\n" );
+                return(rtn);
+            }
+        }
+    }
+    fclose( infile );
+    free(edata);
+    return(n);
 }
-
-

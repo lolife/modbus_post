@@ -32,7 +32,7 @@ typedef struct emerson_data {
     float   bbtp;   // volume of bright beer tank
 } emerson_data;
 
-void get_brewhouse_data();
+int read_and_insert_file();
 int get_emerson_data( emerson_data *edata );
 void parse_emerson_data( uint16_t data[32], emerson_data *edata );
 void create_sqlite_table();
