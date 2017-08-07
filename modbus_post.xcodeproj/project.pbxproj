@@ -52,7 +52,7 @@
 		BAD9E2F81E5E414500FF07C7 /* com.badgerhllbrewing.modbus_post.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = com.badgerhllbrewing.modbus_post.plist; sourceTree = "<group>"; };
 		BAD9E2F91E5E414500FF07C7 /* run_modbus.tcsh */ = {isa = PBXFileReference; lastKnownFileType = text.script.csh; path = run_modbus.tcsh; sourceTree = "<group>"; };
 		BADFA9FE1E09900C000B35C9 /* modbus_post */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = modbus_post; sourceTree = BUILT_PRODUCTS_DIR; };
-		BADFAA011E09900C000B35C9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BADFAA011E09900C000B35C9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = modbus_post/main.c; sourceTree = "<group>"; };
 		BADFAA101E0B34EA000B35C9 /* modbus_post.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = modbus_post.profdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +113,7 @@
 				BA740BB51E505C82008549C2 /* Shared */,
 				BADFAA001E09900C000B35C9 /* modbus_post */,
 				BA740BAB1E505C0D008549C2 /* modbus_dump */,
+				BADFAA011E09900C000B35C9 /* main.c */,
 				BADFA9FF1E09900C000B35C9 /* Products */,
 				BADFAA081E0B3314000B35C9 /* Frameworks */,
 				BADFAA0F1E0B34EA000B35C9 /* OptimizationProfiles */,
@@ -131,7 +132,6 @@
 		BADFAA001E09900C000B35C9 /* modbus_post */ = {
 			isa = PBXGroup;
 			children = (
-				BADFAA011E09900C000B35C9 /* main.c */,
 				BA740BA51E505488008549C2 /* main.h */,
 			);
 			path = modbus_post;

@@ -38,5 +38,8 @@ void parse_emerson_data( uint16_t data[32], emerson_data *edata );
 void create_sqlite_table();
 int insert_emerson_data( emerson_data *edata );
 void print_emerson_data ( emerson_data *edata );
+//int read_from_serial();
+void print_modbus_data( uint16_t data[32], int nnum );
+void get_gateway_time( modbus_t *mb, char* date_string );
 
 #endif /* main_h */
